@@ -1,0 +1,266 @@
+@media only screen and (min-width: 500px) {
+  /*main {
+    margin-top: 18rem;
+  }*/
+}
+
+/* TABLETS AND DESKTOP SPECIFIC STYLES */
+@media only screen and (min-width: 600px) {
+  body .card {
+    width: 30%;
+  }
+
+  body .header-row {
+    flex-direction: row;
+  }
+
+  .favorite .fav-list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 1.5em !important;
+  }
+
+  .favorite .fav-scroll {
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+
+  .favorite .fav-list .card {
+    width: 25rem;
+  }
+
+  .recipe-scroll .card {
+    width: 40%;
+    /*height: 350px !important;*/
+  }
+
+  .header-row img {
+    width: 12%;
+    height: auto;
+    flex-grow: 0;
+    /*margin-top: 10px;
+    margin-left: 10px;*/
+  }
+
+  .search-option {
+    padding: 5rem;
+
+    .search-card {
+      width: 30%;
+    }
+  }
+
+  .recipe-display .list-group-item {
+    .instr {
+      grid-template-columns: 10% 1fr;
+      gap: 1rem;
+    }
+  }
+
+  .loginform {
+    width: 75%;
+    h3 {
+      font-size: 3rem;
+    }
+  }
+
+  body footer img {
+    margin-right: 1.5em;
+    width: 32%;
+  }
+
+  footer .first-row {
+    flex-wrap: nowrap;
+  }
+
+  footer .footer-item {
+    width: 30%;
+  }
+
+  /*body .page-header {
+    gap: 2.5rem !important;
+  }*/
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 62.5% !important;
+  }
+
+  /*main {
+    margin-top: 12rem;
+  }*/
+
+  .recipe-scroll .card {
+    width: 30%;
+    /*height: 350px !important;*/
+  }
+  .contact {
+    .contact-us,
+    .contact-header {
+      width: 70%;
+    }
+  }
+
+  .recipe-display .recipe-header {
+    .col-md-6 {
+      flex: 0 1 auto;
+      width: 100%;
+    }
+  }
+
+  .recipe-form .ingr-form {
+    padding: 1rem;
+    .delete-btn {
+      position: unset;
+      margin-left: 1rem;
+      padding: 1rem;
+      align-self: center;
+    }
+  }
+}
+
+/* DESKTOP SPECIFIC STYLES */
+@media only screen and (min-width: 992px) {
+  .card {
+    width: 23%;
+  }
+
+  .navbar .navbar-collapse {
+    position: static;
+    background-color: inherit !important;
+    border-bottom: none;
+    /*margin-top: 3rem;*/
+  }
+
+  .app-menu .empty {
+    height: 8rem;
+    display: block;
+  }
+
+  .favorite .fav-list {
+    width: fit-content;
+    .card {
+      width: 23%;
+    }
+  }
+
+  .favorite .fav-scroll {
+    overflow-x: hidden;
+  }
+
+  .recipe-display .recipe-header {
+    .col-md-6 {
+      flex: 0 0 auto;
+      width: 50%;
+    }
+  }
+
+  .recipe-layout {
+    width: 85% !important;
+  }
+
+  .about article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+
+  .about article:nth-child(3) {
+    .blog {
+      grid-row: 1;
+      grid-column: 2;
+    }
+  }
+
+  .contact {
+    .contact-us,
+    .contact-header {
+      width: 90%;
+    }
+    .contact-us {
+      flex-direction: row;
+    }
+  }
+
+  .contact .contact-list .contact-list-items {
+    align-items: flex-start;
+  }
+
+  .app-menu .navbar ul {
+    gap: 1.5em !important;
+  }
+
+  body .page-header {
+    gap: 1em !important;
+  }
+
+  .loginform {
+    width: 60%;
+  }
+
+  .recipe-scroll .card {
+    width: 23%;
+    /*height: 350px !important;*/
+  }
+
+  body .header-row {
+    flex-wrap: nowrap;
+    gap: 2.5em !important;
+  }
+
+  body .header-row img {
+    width: 15%;
+    height: auto;
+    flex-grow: 0;
+    /*margin-top: 1rem;
+    margin-left: 1rem;*/
+  }
+
+  body .favorite .fav-list {
+    flex-direction: row;
+    gap: 1.5em !important;
+  }
+
+  body .images-anime {
+    padding: 5rem 12rem;
+  }
+
+  body .mission {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+
+    .img2,
+    .message2 {
+      grid-row: 2;
+    }
+
+    p {
+      justify-self: start;
+      text-align: start;
+      width: 80%;
+    }
+
+    img {
+      justify-self: start;
+      width: 80%;
+    }
+  }
+
+  /* body .mission p {
+    width: 55%;
+  }
+
+  body .mission img {
+    width: 40%;
+  }*/
+
+  body footer img {
+    margin-right: 3.5em;
+  }
+
+  body footer .menu-links {
+    margin-left: 3.5rem;
+  }
+}

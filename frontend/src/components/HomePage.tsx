@@ -1,11 +1,3 @@
-import image1 from "../assets/images/chicken.jpg";
-import image2 from "../assets/images/salmon.jpg";
-import image3 from "../assets/images/goulash.jpg";
-import image4 from "../assets/images/dessert.jpg";
-import image5 from "../assets/images/creme-brulee.jpg";
-import image6 from "../assets/images/lobster.jpg";
-import image7 from "../assets/images/noodles.jpg";
-import image8 from "../assets/images/vegetable-skewer.jpg";
 import { useNavigate } from "react-router-dom";
 import HeroSection from "./HeroSection";
 import FavoriteSection from "./FavoriteSection";
@@ -14,68 +6,67 @@ import EasySection from "./EasySection";
 import { SearchType } from "../App";
 
 type Props = {
-    searchValue: SearchType
-}
+  searchValue: SearchType;
+};
 
 export default function HomePage(props: Props) {
-    const navigate = useNavigate();
-    const handleViewAll = (e: React.MouseEvent<HTMLAnchorElement>, mealType: string = "",
-        ingredientType: string = "" ) => {
-        e.preventDefault();
-        const value = e.currentTarget.text;
-        
-        if (ingredientType !== "") { 
-            //setSelectedMenu("Ingredients");
-            props.searchValue.updateIngredientType(ingredientType);
-        }
-        if (mealType !== "") {
-            //setSelectedMenu("Meal");
-            props.searchValue.updateMealType(mealType);
-        }
+  const navigate = useNavigate();
+  const handleViewAll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    mealType: string = "",
+    ingredientType: string = ""
+  ) => {
+    e.preventDefault();
+    const value = e.currentTarget.text;
 
-        navigate("/recipes");
-        
+    if (ingredientType !== "") {
+      //setSelectedMenu("Ingredients");
+      props.searchValue.updateIngredientType(ingredientType);
     }
-    return (
-        <div className="front-page">            
-            <div className="content d-flex flex-column">
-                {/*<img className="images-anime"/> */}
-                <HeroSection/>   
-                <FavoriteSection/>
-                <p className="separator"></p>
-                <DinnerSection handleViewAll={handleViewAll}/>
-                <p className="separator"></p>
-                <EasySection handleViewAll={handleViewAll}/>
-                <p className="separator"></p>
-                <div className="mission d-flex gap-4">
-                    <div className="text-start message">
-                        <h2 className="mb-3">Our Mission</h2>
-                        <p>
-                            At Savory Secrets, we believe that food brings people together, and we are 
-                            dedicated to building a warm and welcoming community of food enthusiasts. 
-                            Our community is a place where you can share your culinary adventures, 
-                            learn from one another, and find inspiration every day. Whether you’re 
-                            a seasoned cook or just starting your culinary journey, you’ll find a 
-                            supportive and friendly environment here.
-                        </p>
-                        <p>
-                            Our goal is to provide you with reliable, easy-to-follow recipes that you can 
-                            trust. Whether you’re looking for quick weeknight dinners, indulgent desserts, 
-                            or healthy meal prep ideas, you’ll find a diverse collection of recipes to suit 
-                            every occasion. We also strive to offer valuable tips, cooking techniques, and 
-                            ingredient information to help you become a more skilled and knowledgeable home 
-                            cook. By offering a variety of recipes, we hope to cater to different tastes, 
-                            dietary preferences, and cooking levels.
-                        </p>
-                    </div>
-                    <div className="d-flex flex-column gap-2 images align-self-end">
-                        <img src="images/lobster.jpg"/>
-                        <img src="images/dish1.jpg"/>
-                    </div>
-                </div>
-                              
-            </div>
-            
+    if (mealType !== "") {
+      //setSelectedMenu("Meal");
+      props.searchValue.updateMealType(mealType);
+    }
+
+    navigate("/recipes");
+  };
+  return (
+    <div className="front-page">
+      <div className="content d-flex flex-column">
+        {/*<img className="images-anime"/> */}
+        <HeroSection />
+        <FavoriteSection />
+        <p className="separator"></p>
+        <DinnerSection handleViewAll={handleViewAll} />
+        <p className="separator"></p>
+        <EasySection handleViewAll={handleViewAll} />
+        <p className="separator"></p>
+        <h2 className="mt-5 text-start ps-5">Our Mission</h2>
+        <div className="mission">
+          <p className="message1">
+            At Savory Secrets, we believe that food brings people together, and
+            we are dedicated to building a warm and welcoming community of food
+            enthusiasts. Our community is a place where you can share your
+            culinary adventures, learn from one another, and find inspiration
+            every day. Whether you’re a seasoned cook or just starting your
+            culinary journey, you’ll find a supportive and friendly environment
+            here.
+          </p>
+
+          <img className="img1" src="images/lobster.jpg" />
+          <img className="img2" src="images/dish1.jpg" />
+          <p className="message2">
+            Our goal is to provide you with reliable, easy-to-follow recipes
+            that you can trust. Whether you’re looking for quick weeknight
+            dinners, indulgent desserts, or healthy meal prep ideas, you’ll find
+            a diverse collection of recipes to suit every occasion. We also
+            strive to offer valuable tips, cooking techniques, and ingredient
+            information to help you become a more skilled and knowledgeable home
+            cook. By offering a variety of recipes, we hope to cater to
+            different tastes, dietary preferences, and cooking levels.
+          </p>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

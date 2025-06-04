@@ -5,53 +5,63 @@ import { Recipe } from "./RecipePage";
 import HorizontalScroll from "./HorizontalScroll";
 
 type Props = {
-    handleViewAll(e: React.MouseEvent<HTMLAnchorElement>, mealType: string, ingredientType: string): void
-}
-
+  handleViewAll(
+    e: React.MouseEvent<HTMLAnchorElement>,
+    mealType: string,
+    ingredientType: string
+  ): void;
+};
 
 export default function DinnerSection(props: Props) {
-    const navigate = useNavigate();
-    const [dinners, setDinners] = useState<Recipe[]>([]);
-    const [dinnerSet, setDinnerSet] = useState<Recipe[][]>([]);
-    
-    useEffect(() => {
-        const url = "http://localhost:8000/recipes?mealType=dinner";
-        axios.get(url)
-            .then(response => {
-                setDinners(response.data.data[0]);
-            })
-    }, []);
+  const navigate = useNavigate();
+  const [dinners, setDinners] = useState<Recipe[]>([]);
+  const [dinnerSet, setDinnerSet] = useState<Recipe[][]>([]);
 
-    useEffect(() => {
-        populateDinnerSet();
-    }, [dinners]);
+  useEffect(() => {
+    const url = "http://localhost:8000/recipes?mealType=dinner";
+    axios.get(url).then((response) => {
+      setDinners(response.data.data[0]);
+    });
+  }, []);
 
-    const populateDinnerSet = () => {
-        let dinnerList: Recipe[][] = [];
-        let count = 0;
-        let lst: Recipe[] = [];
-        for (const d of dinners) {
-            if (count < 4) {
-                lst.push(d);
-                count++;
-                if (count >= 4) {
-                    dinnerList.push(lst);
-                    lst = [];
-                    count = 0;
-                }
-            } 
+  useEffect(() => {
+    populateDinnerSet();
+  }, [dinners]);
+
+  const populateDinnerSet = () => {
+    let dinnerList: Recipe[][] = [];
+    let count = 0;
+    let lst: Recipe[] = [];
+    for (const d of dinners) {
+      if (count < 4) {
+        lst.push(d);
+        count++;
+        if (count >= 4) {
+          dinnerList.push(lst);
+          lst = [];
+          count = 0;
         }
-        setDinnerSet(dinnerList);
+      }
     }
+    setDinnerSet(dinnerList);
+  };
 
-    return (
-        <div className="dinner-section p-3">
-            <div className="d-flex mt-3 mb-4">
-                <h2 className="text-start align-self-center ms-3 flex-grow-1">Explore Dinner Recipes</h2>
-                <a href="#" className="justify-self-end align-self-center" onClick={(e) => props.handleViewAll(e, "dinner", "")}>View All</a>
-            </div>  
-            <HorizontalScroll recipes={dinners}/>
-            {/*<div id="carouselControls" className="carousel dinner d-flex flex-nowrap gap-4 mt-3 slide" data-bs-ride="carousel">
+  return (
+    <div className="dinner-section p-3">
+      <div className="d-flex mt-3 mb-4 flex-wrap">
+        <h2 className="text-start align-self-center ms-3 flex-grow-1">
+          Explore Dinner Recipes
+        </h2>
+        <a
+          href="#"
+          className="justify-self-end align-self-center"
+          onClick={(e) => props.handleViewAll(e, "dinner", "")}
+        >
+          View All
+        </a>
+      </div>
+      <HorizontalScroll recipes={dinners} />
+      {/*<div id="carouselControls" className="carousel dinner d-flex flex-nowrap gap-4 mt-3 slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     {dinnerSet.map((rec1, ind) => (
                         <div className={ ind === 0? "carousel-item active": "carousel-item"}>
@@ -78,6 +88,6 @@ export default function DinnerSection(props: Props) {
                     <span className="visually-hidden">Next</span>
                 </a>
             </div>*/}
-        </div>
-    )
+    </div>
+  );
 }
