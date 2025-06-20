@@ -13,7 +13,7 @@ load_dotenv()
 
 #config = dotenv_values(".env")
 #print(config)
-mongodb_client = AsyncIOMotorClient(os.getenv("ATLAS_URI"), tls=True, tlsAllowInvalidCertificates=True, server_api=ServerApi('1'))
+mongodb_client = AsyncIOMotorClient(os.getenv("MONGO_URI"), tls=True, tlsAllowInvalidCertificates=True, server_api=ServerApi('1'))
 #mongodb_client = MongoClient(os.getenv("ATLAS_URI"), tls=True, tlsAllowInvalidCertificates=True, server_api=ServerApi('1'))
 database = mongodb_client[os.getenv("DB_NAME")]
 recipe_collection = database.get_collection("recipes")

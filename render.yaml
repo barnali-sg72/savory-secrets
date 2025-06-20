@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: savory-secrets-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python backend/main.py
+    envVars:
+      - key: MONGO_URI
+        value:
+      - key: DB_NAME
+        value:

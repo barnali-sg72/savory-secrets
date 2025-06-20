@@ -30,7 +30,7 @@ async def read_root():
 '''
 @app.on_event("startup")
 def startup_db_client():
-    app.mongodb_client = MongoClient(config["ATLAS_URI"])
+    app.mongodb_client = MongoClient(config["MONGO_URI"])
     app.database = app.mongodb_client[config["DB_NAME"]]
     #uri = "mongodb+srv://barnalisg72:AzLrhX9E17eUCYwg@mycluster.f6ieway.mongodb.net/?retryWrites=true&w=majority&appName=MyCluster"
 
