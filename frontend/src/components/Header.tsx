@@ -95,6 +95,8 @@ export default function Header(props: Props) {
 
   const handleSearchCriteria = () => {
     props.searchValue.updateCriteria(searchValue);
+    navigate("/recipes");
+    setSelectedMenu("ALL RECIPES");
   };
 
   return (

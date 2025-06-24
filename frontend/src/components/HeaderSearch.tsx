@@ -1,3 +1,4 @@
+import { on } from "events";
 import { Search } from "react-bootstrap-icons";
 
 type Props = {
@@ -7,6 +8,11 @@ type Props = {
 };
 
 export default function HeaderSearch(props: Props) {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      props.handleSearchCriteria();
+    }
+  };
   return (
     <div
       className={`border border-white  rounded-4 overflow-hidden d-flex flex-nowrap align-self-center ${props.width}`}
@@ -18,6 +24,7 @@ export default function HeaderSearch(props: Props) {
         placeholder="Search by recipe or ingredient name"
         aria-label="Search"
         onChange={props.handleSearchChange}
+        onKeyDown={handleKeyDown}
       />
       <button className="btn btn-primary rounded-0 py-2 px-3">
         <Search
