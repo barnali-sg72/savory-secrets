@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import {  User, UserContext, UserContextType } from "../App";
+import { User, UserContext, UserContextType } from "../App";
 import { useNavigate, useOutletContext } from "react-router-dom";
 //import { OutletContextType } from "./RecipePage";
 import React from "react";
@@ -17,14 +17,13 @@ export default function LoginForm() {
 
   const handleSignIn = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    //const response = await axios.get("http://localhost:8000/user/"+username+"?password="+password);
     const authUser = {
       username: btoa(username),
       password: btoa(password),
     };
 
     const response = await axios.post(
-      "http://localhost:8000/user/login",
+      `${process.env.REACT_APP_RECIPE_API_URL}/user/login`,
       authUser
     );
     if (response.data.code == 200) {
@@ -112,7 +111,7 @@ export default function LoginForm() {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-secondary"
                     onClick={handleCancel}
                   >
                     Cancel

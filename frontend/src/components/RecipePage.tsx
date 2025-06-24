@@ -126,18 +126,13 @@ export default function RecipePage(props: Props) {
 
   const getRecipeList = () => {
     let url = "";
-    const urlAll = "http://localhost:8000/recipes";
-    const urlUserRecipes =
-      "http://localhost:8000/recipes?author=" + getLoggedUser()?.username;
-    const urlSearch =
-      "http://localhost:8000/recipes?name=" + props.menuData.searchCriteria;
-    //const urlFilter = "http://localhost:8000/recipes?name=" + filterList;
-    const urlMealType =
-      "http://localhost:8000/recipes?mealType=" + props.menuData.mealType;
-    const urlIngredientType =
-      "http://localhost:8000/recipes?ingredientType=" +
-      props.menuData.ingredientType;
-    //const urlFilterAndSearch =       "http://localhost:8000/recipes?name=" +      props.menuData.searchCriteria +       filterList;
+    const urlAll = `${process.env.REACT_APP_RECIPE_API_URL}/recipes`;
+    const urlUserRecipes = `${
+      process.env.REACT_APP_RECIPE_API_URL
+    }/recipes?author=${getLoggedUser()?.username}`;
+    const urlSearch = `${process.env.REACT_APP_RECIPE_API_URL}/recipes?name=${props.menuData.searchCriteria}`;
+    const urlMealType = `${process.env.REACT_APP_RECIPE_API_URL}/recipes?mealType=${props.menuData.mealType}`;
+    const urlIngredientType = `${process.env.REACT_APP_RECIPE_API_URL}/recipes?ingredientType=${props.menuData.ingredientType}`;
 
     let heading = "";
     if (props.menuData.isUserRecipes) {
@@ -200,7 +195,9 @@ export default function RecipePage(props: Props) {
   const fetchRecipe = async (id: string, mode: string) => {
     resetMessages();
     if (id !== null && id !== undefined) {
-      const response = await axios.get("http://localhost:8000/recipes/" + id);
+      const response = await axios.get(
+        `${process.env.REACT_APP_RECIPE_API_URL}/recipes/${id}`
+      );
 
       return response;
     }
@@ -218,7 +215,7 @@ export default function RecipePage(props: Props) {
   const saveRecipe = (recipe: RecipeDetails, mode: string) => {
     if (mode === "add") {
       axios
-        .post("http://localhost:8000/recipes", recipe)
+        .post(`${process.env.REACT_APP_RECIPE_API_URL}/recipes`, recipe)
         .then((response) => {
           //setMode("");
           getRecipeList();
@@ -233,7 +230,10 @@ export default function RecipePage(props: Props) {
         });
     } else if (mode === "edit") {
       axios
-        .put("http://localhost:8000/recipes/" + recipe.id, recipe)
+        .put(
+          `${process.env.REACT_APP_RECIPE_API_URL}/recipes/${recipe.id}`,
+          recipe
+        )
         .then((response) => {
           //setMode("");
           setSuccess("Recipe updated successfully");
@@ -253,7 +253,7 @@ export default function RecipePage(props: Props) {
   const deleteRecipe = (id: string | undefined) => {
     if (id !== null && id !== undefined) {
       axios
-        .delete("http://localhost:8000/recipes/" + id)
+        .delete(`${process.env.REACT_APP_RECIPE_API_URL}/recipes/${id}`)
         .then((response) => {
           //setMode("");
           getRecipeList();

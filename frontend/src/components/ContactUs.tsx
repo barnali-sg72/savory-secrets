@@ -116,7 +116,7 @@ export default function ContactUs() {
       <div className="contact-overlay d-flex flex-column align-items-center">
         <div className="contact-header d-flex flex-column align-items-center">
           <h2>Contact Us</h2>
-          <h4 className="py-4">We’d love to hear from you! </h4>
+          <h3 className="py-4">We’d love to hear from you! </h3>
           <p className="py-5">
             Questions, feedback, or just want to say hello? Drop us a message
             and we’ll get back to you as soon as we can.
@@ -230,7 +230,7 @@ export default function ContactUs() {
                 <button type="submit" className="btn btn-primary">
                   Send
                 </button>
-                <button type="reset" className="btn btn-primary">
+                <button type="reset" className="btn btn-secondary">
                   Cancel
                 </button>
               </div>

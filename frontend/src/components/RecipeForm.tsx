@@ -813,7 +813,7 @@ export default function RecipeForm(props: Props) {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-secondary"
                     onClick={handleCancelClick}
                   >
                     Cancel

@@ -38,7 +38,7 @@ export default function HeaderUser(props: Props) {
       {localStorage.getItem("user") === undefined ||
       localStorage.getItem("user") === null ? (
         <button
-          className="signin btn btn-light align-self-center"
+          className="signin btn btn-secondary align-self-center"
           onClick={(e) => navigate("/login")}
         >
           Sign In

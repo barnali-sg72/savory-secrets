@@ -18,7 +18,7 @@ export default function DinnerSection(props: Props) {
   const [dinnerSet, setDinnerSet] = useState<Recipe[][]>([]);
 
   useEffect(() => {
-    const url = "http://localhost:8000/recipes?mealType=dinner";
+    const url = `${process.env.REACT_APP_RECIPE_API_URL}/recipes?mealType=dinner`;
     axios.get(url).then((response) => {
       setDinners(response.data.data[0]);
     });
@@ -60,34 +60,10 @@ export default function DinnerSection(props: Props) {
           View All
         </a>
       </div>
-      <HorizontalScroll recipes={dinners} />
-      {/*<div id="carouselControls" className="carousel dinner d-flex flex-nowrap gap-4 mt-3 slide" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                    {dinnerSet.map((rec1, ind) => (
-                        <div className={ ind === 0? "carousel-item active": "carousel-item"}>
-                        <div className="cards-wrapper">
-                            {rec1.map(rec2 => (
-                                <article className="card position-relative" onClick={() => navigate("/recipes/display/"+ rec2.id)}>
-                                    <img className="card-img-top" src={rec2.image} alt={rec2.title}></img>
-                                    <div className="card-body"> 
-                                        <h6 className="card-author mb-3"><b>Author:</b> {rec2.author.firstname + " " + rec2.author.lastname}</h6>
-                                        <h5 className="card-title text-wrap">{rec2.title}</h5>                              
-                                    </div>
-                                </article>
-                            ))}
-                        </div>           
-                       </div>                
-                    ))} 
-                </div>
-                <a className="carousel-control-prev" data-bs-target="#carouselControls" role="button" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </a>
-                <a className="carousel-control-next" data-bs-target="#carouselControls" role="button" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </a>
-            </div>*/}
+      <HorizontalScroll
+        recipes={dinners}
+        containerId="dinner-section-container"
+      />
     </div>
   );
 }

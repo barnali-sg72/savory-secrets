@@ -50,12 +50,12 @@ body {
 }*/
 
 h1 {
-  font-size: 5.4rem !important;
+  font-size: 5.6rem !important;
   font-weight: bold !important;
 }
 
 h2 {
-  font-size: 4rem !important;
+  font-size: 4.8rem !important;
   font-weight: bold !important;
 }
 
@@ -112,6 +112,20 @@ textarea {
   background-color: #1b5196 !important;
   color: white;
   border: 1px solid white !important;
+}
+
+.btn-primary:hover {
+  background-color: #578aca;
+}
+
+.btn-secondary {
+  background-color: white !important;
+  color: #023e8a !important;
+  border: 1px solid #023e8a !important;
+}
+
+.btn-secondary:hover {
+  opacity: 0.7;
 }
 
 .btn-link {
@@ -461,6 +475,10 @@ p.separator {
   background-color: #ccd9ff;
 }*/
 
+.front-page h2 {
+  font-size: 4rem !important;
+}
+
 .mission {
   padding: 30px;
   font-size: 20px;
@@ -604,9 +622,26 @@ p.separator {
   transform: translateY(-50%);
 }
 
-.recipe-scroll .card {
+.section-scroll {
+  svg {
+    cursor: pointer;
+  }
+}
+
+.scrollable {
+  scroll-snap-type: x mandatory;
+}
+
+.scrollable .card {
   width: 100%;
   height: 350px !important;
+}
+
+.scrollable li {
+  width: 100%;
+  padding: 1rem;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .recipe-scroll {
@@ -614,6 +649,20 @@ p.separator {
   overflow-y: hidden;
   width: 90%;
   padding: 2rem 0;
+}
+
+.scrollable {
+  padding: 2rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 90%;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 .arrow-disabled {
@@ -1035,17 +1084,12 @@ article.card:hover {
 
 .contact .contact-header {
   h2,
-  h4,
+  h3,
   p {
     color: white !important;
     font-weight: bold;
   }
-  h2 {
-    font-size: 5.4rem !important;
-  }
-  h4 {
-    font-size: 2.8rem !important;
-  }
+
   p {
     font-size: 2rem !important;
   }

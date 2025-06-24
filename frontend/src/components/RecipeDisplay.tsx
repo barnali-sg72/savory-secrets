@@ -58,7 +58,7 @@ export default function RecipeDisplay() {
 
   const getAllReviews = (update: boolean, rev: Review) => {
     //get reviews
-    const url = "http://localhost:8000/reviews?recipeId=" + id;
+    const url = `${process.env.REACT_APP_RECIPE_API_URL}/reviews?recipeId=${id}`;
     axios
       .get(url)
       .then((response) => {
@@ -68,7 +68,7 @@ export default function RecipeDisplay() {
           rating: rate,
         };
         axios
-          .put("http://localhost:8000/recipes/" + id, body)
+          .put(`${process.env.REACT_APP_RECIPE_API_URL}/recipes/${id}`, body)
           .then((response) => {
             console.log(response);
             if (update) {
@@ -154,7 +154,7 @@ export default function RecipeDisplay() {
   const saveReview = async () => {
     let rev = await createReview();
     axios
-      .post("http://localhost:8000/reviews", rev)
+      .post(`${process.env.REACT_APP_RECIPE_API_URL}/reviews`, rev)
       .then((response) => {
         console.log(response);
         getAllReviews(true, rev);
@@ -396,7 +396,7 @@ export default function RecipeDisplay() {
                           >
                             Save Review
                           </button>
-                          <button role="button" className="btn btn-primary">
+                          <button role="button" className="btn btn-secondary">
                             Cancel
                           </button>
                         </div>

@@ -23,6 +23,9 @@ export default function Footer() {
             <li>
               <a href="/about">About</a>
             </li>
+            <li>
+              <a href="/contactus">About</a>
+            </li>
           </ul>
         </div>
         <div className="footer-item">

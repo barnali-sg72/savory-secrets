@@ -18,7 +18,7 @@ export default function HeroSection() {
             design, finding the perfect recipe has never been easier.
           </p>
           <button
-            className="btn btn-light float-start"
+            className="btn btn-secondary float-start"
             aria-label="explore"
             onClick={() => navigate("/recipes")}
           >

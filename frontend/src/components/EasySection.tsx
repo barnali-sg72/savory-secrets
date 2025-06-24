@@ -15,16 +15,16 @@ type Props = {
 export default function EasySection(props: Props) {
   //const navigate = useNavigate();
   const [meals, setMeals] = useState<Recipe[]>([]);
-  const [mealSet, setMealSet] = useState<Recipe[][]>([]);
+  //const [mealSet, setMealSet] = useState<Recipe[][]>([]);
 
   useEffect(() => {
-    const url = "http://localhost:8000/recipes?ingredientType=easy";
+    const url = `${process.env.REACT_APP_RECIPE_API_URL}/recipes?ingredientType=easy`;
     axios.get(url).then((response) => {
       setMeals(response.data.data[0]);
     });
   }, []);
 
-  useEffect(() => {
+  /*useEffect(() => {
     populateMealSet();
   }, [meals]);
 
@@ -44,7 +44,7 @@ export default function EasySection(props: Props) {
       }
     }
     setMealSet(mealList);
-  };
+  };*/
 
   return (
     <div className="easy-section p-3">
@@ -60,7 +60,7 @@ export default function EasySection(props: Props) {
           View All
         </a>
       </div>
-      <HorizontalScroll recipes={meals} />
+      <HorizontalScroll recipes={meals} containerId="easy-section-container" />
     </div>
   );
 }

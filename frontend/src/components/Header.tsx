@@ -31,6 +31,8 @@ export default function Header(props: Props) {
       setSelectedMenu("INGREDIENTS");
     } else if (location.pathname.includes("about")) {
       setSelectedMenu("ABOUT");
+    } else if (location.pathname.includes("contact")) {
+      setSelectedMenu("CONTACT US");
     } else {
       setSelectedMenu("HOME");
     }
@@ -99,12 +101,14 @@ export default function Header(props: Props) {
     <header className="d-flex flex-column page-header  px-4 pb-2 pt-4">
       {matches ? (
         <>
-          <div className="d-flex flex-nowrap header-row search justify-content-between  align-content-center">
+          <div className="d-flex flex-nowrap header-row search justify-content-between  cursor-pointer align-content-center">
             <img
               src={logo}
               width="200"
               height="100"
               className="align-self-center"
+              role="button"
+              onClick={() => navigate("/home")}
             ></img>
             <HeaderSearch
               width={"w-50"}

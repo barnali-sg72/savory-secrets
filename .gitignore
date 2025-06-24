@@ -3,3 +3,6 @@ backend/.env
 # Ignore Python cache files
 __pycache__/  
 *.py[cod]
+frontend/node_modules/
+frontend/dist/  
+frontend/.env

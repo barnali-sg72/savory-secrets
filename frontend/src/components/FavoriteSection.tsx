@@ -16,7 +16,8 @@ export default function FavoriteSection() {
   ];
 
   useEffect(() => {
-    const url = "http://localhost:8000/recipes?" + getTitleList();
+    const url =
+      `${process.env.REACT_APP_RECIPE_API_URL}/recipes?` + getTitleList();
     axios.get(url).then((response) => {
       setFavorites(response.data.data[0]);
     });

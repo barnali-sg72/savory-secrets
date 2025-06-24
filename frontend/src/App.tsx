@@ -122,10 +122,13 @@ function App() {
     let response = null;
     let isError = false;
     if (mode == "signup") {
-      response = await axios.post("http://localhost:8000/user", user);
+      response = await axios.post(
+        `${process.env.REACT_APP_RECIPE_API_URL}/user`,
+        user
+      );
     } else {
       response = await axios.put(
-        "http://localhost:8000/user/" + user?.id,
+        `${process.env.REACT_APP_RECIPE_API_URL}/user/${user?.id}`,
         user
       );
     }
