@@ -5,6 +5,26 @@ export default function HeroSection() {
   return (
     <>
       <div className="hero">
+        <img
+          src="../assets/images/food8.webp"
+          alt="hidden-image1"
+          className="d-none"
+        />
+        <img
+          src="../assets/images/food9.webp"
+          alt="hidden-image2"
+          className="d-none"
+        />
+        <img
+          src="../assets/images/food13.webp"
+          alt="hidden-image3"
+          className="d-none"
+        />
+        <img
+          src="../assets/images/food10.webp"
+          alt="hidden-image4"
+          className="d-none"
+        />
         <div className="images-anime d-flex flex-column align-items-center">
           <h1>Welcome to Savory Secrets!</h1>
           <p>
