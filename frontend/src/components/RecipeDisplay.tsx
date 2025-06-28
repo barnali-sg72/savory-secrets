@@ -191,11 +191,11 @@ export default function RecipeDisplay() {
           <div className="row ">
             <div className="col-md-12 d-flex mt-2 justify-content-between align-items-center">
               <a
-                className="justify-self-start"
+                className="view justify-self-start"
                 href="#"
                 onClick={(e) => navigate("/recipes")}
               >
-                Go to List Page
+                &lt;&lt; List Page
               </a>
               <div
                 className="edit  btn-group justify-self-end align-items-center"
@@ -274,7 +274,7 @@ export default function RecipeDisplay() {
                 </div>
               </div>
               <div className="row mt-5">
-                <div className="col-md-6 text-start bg-light-grey border border-secondary-subtle rounded-4 p-4">
+                <div className="col-md-6 text-start bg-light-grey border border-grey rounded-4 p-4">
                   <div className="row mt-4">
                     <div className="col-md-6 text-start">
                       <div>
@@ -313,7 +313,7 @@ export default function RecipeDisplay() {
                   </div>
                   <div className="row">
                     <div className="col-md-6">
-                      <ul className="list-group border border-secondary-subtle p-4">
+                      <ul className="list-group border border-grey p-4">
                         {recipeDetails.ingredients.map((ing) => (
                           <li className="list-group-item p-0 mb-2">
                             <div className="row">
@@ -339,7 +339,7 @@ export default function RecipeDisplay() {
                     <b>INSTRUCTIONS:</b>
                   </span>
                 </h4>
-                <ul className="list-group border border-secondary-subtle p-4 m-2">
+                <ul className="list-group border border-grey p-4 m-2">
                   {recipeDetails.instructions.map((ins) => (
                     <li className="list-group-item">
                       <div className="instr float-start">
@@ -358,7 +358,7 @@ export default function RecipeDisplay() {
                     <b>REVIEWS:</b>
                   </span>
                 </h4>
-                <div className="ratings d-flex flex-column border border-secondary-subtle">
+                <div className="ratings d-flex flex-column border border-grey">
                   {!hasCurrentUserReview() &&
                   recipeDetails.author.username !==
                     getLoggedUser()?.username ? (
@@ -366,7 +366,7 @@ export default function RecipeDisplay() {
                       <h5 className="align-self-start p-2 mt-2 fw-bold">
                         Please review this recipe:
                       </h5>
-                      <div className="add-review d-flex flex-column border border-secondary-subtle p-4 bg-white">
+                      <div className="add-review d-flex flex-column border border-grey p-4 bg-white">
                         <div className="d-flex">
                           <span className="align-self-start">
                             Rate this recipe:

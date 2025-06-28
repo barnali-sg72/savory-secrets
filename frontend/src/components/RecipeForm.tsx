@@ -322,18 +322,18 @@ export default function RecipeForm(props: Props) {
 
   const getSelectStyle = () => {
     if (errors.get("dishTypes")) {
-      return "col-md-12 ms-3 border border-danger py-3 ps-5 rounded-3";
+      return "col-md-12  border dish-types border-danger py-3 ps-5 rounded-4";
     } else {
-      return "col-md-12 ms-3 border border-secondary py-3  ps-5 rounded-3";
+      return "col-md-12   dish-types  py-3  ps-5 rounded-4";
     }
   };
 
   return (
-    <>
-      <div className="row align-items-center search mb-2 g-0">
+    <section className="recipe-form-section ">
+      <div className=" row align-items-center search mb-2 g-0">
         <div className="col-md">
-          <a href="#" onClick={(e) => navigate("/recipes")}>
-            Go to List Page
+          <a href="#" className="view" onClick={(e) => navigate("/recipes")}>
+            &lt;&lt; List Page
           </a>
         </div>
       </div>
@@ -352,7 +352,7 @@ export default function RecipeForm(props: Props) {
             </div>
             <div className="row">
               <div className="col-md-12">
-                <div className="row mb-3 mt-4">
+                <div className="row mb-5 mt-4">
                   <div className="col-md-2">
                     <label htmlFor="title" className="form-label">
                       Recipe Name
@@ -377,7 +377,7 @@ export default function RecipeForm(props: Props) {
                     </span>
                   </div>
                 </div>
-                <div className="row mb-3">
+                <div className="row mb-5">
                   <div className="col-md-2">
                     <label htmlFor="image" className="form-label">
                       Recipe Image
@@ -402,7 +402,7 @@ export default function RecipeForm(props: Props) {
                     </span>{" "}
                   </div>
                 </div>
-                <div className="row mb-3">
+                <div className="row mb-5">
                   <div className="col-md-2">
                     <label htmlFor="description" className="form-label">
                       Description
@@ -413,6 +413,7 @@ export default function RecipeForm(props: Props) {
                       id="description"
                       name="description"
                       required
+                      rows={6}
                       value={recipe.description}
                       className={
                         errors.get("description")
@@ -426,7 +427,7 @@ export default function RecipeForm(props: Props) {
                     </span>
                   </div>
                 </div>
-                <div className="row mb-3">
+                <div className="row mb-5">
                   <div className="col-md-3">
                     <label htmlFor="readyInMinutes" className="form-label">
                       Total time in minutes
@@ -476,16 +477,16 @@ export default function RecipeForm(props: Props) {
                     </span>
                   </div>
                 </div>
-                <div className="row mb-3">
+                <div className="row  mb-3">
                   <div className="col-md-3">
-                    <label className="float-start ms-3 mt-2">
+                    <label className="float-start  mt-2">
                       Select dish types:
                     </label>
                   </div>
                 </div>
-                <div className="row mb-3">
+                <div className="row  mb-5">
                   <div className={getSelectStyle()}>
-                    <div className="row">
+                    <div className="row ">
                       <div className="form-check col-md-3">
                         <input
                           type="checkbox"
@@ -646,7 +647,7 @@ export default function RecipeForm(props: Props) {
                     {errors.get("dishTypes")}
                   </span>
                 </div>
-                <div className="mb-3">
+                <div className="mb-5">
                   <div className="row gx-0 align-items-center form-header">
                     <div className="col-md-12  d-flex justify-content-between align-items-center">
                       <h4 className="float-start ms-2">Ingredients</h4>
@@ -660,7 +661,7 @@ export default function RecipeForm(props: Props) {
                     </div>
                   </div>
                   {recipe.ingredients.map((ing, key) => (
-                    <div className="ingr-form row  position-relative rounded-4 gx-0 mt-3">
+                    <div className="ingr-form row  position-relative rounded-4 gx-0 mt-3 py-4">
                       <div className="col-md-1">
                         <label htmlFor={"name-" + key} className="form-label">
                           Name
@@ -749,7 +750,7 @@ export default function RecipeForm(props: Props) {
                     </div>
                   ))}
                 </div>
-                <div className="mb-3">
+                <div className="mb-5">
                   <div className="row gx-0 align-items-center form-header">
                     <div className="col-md-12  d-flex justify-content-between align-items-center">
                       <h4 className="float-start ms-2 mt-2">Instructions</h4>
@@ -778,6 +779,7 @@ export default function RecipeForm(props: Props) {
                             id={"step-" + ins.number}
                             name="step"
                             required
+                            rows={3}
                             value={ins.step}
                             className={
                               errors.get("instruction.step-" + key)
@@ -824,6 +826,6 @@ export default function RecipeForm(props: Props) {
           </form>
         </div>
       </div>
-    </>
+    </section>
   );
 }

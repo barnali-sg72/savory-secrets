@@ -11,7 +11,7 @@ type Props = {
 export default function Nav(props: Props) {
   return (
     <div className="app-menu d-flex">
-      <div className="empty"></div>
+      {/*<div className="empty"></div>*/}
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <button
           className="navbar-toggler"

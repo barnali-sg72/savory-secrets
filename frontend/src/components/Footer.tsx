@@ -1,4 +1,4 @@
-import logo from "../assets/images/logo10.png";
+import logo from "../assets/images/logo4.png";
 
 export default function Footer() {
   return (
@@ -9,22 +9,22 @@ export default function Footer() {
           <h5 className="fw-bold">MENU LINKS</h5>
           <ul>
             <li>
-              <a href="/home">Home</a>
+              <a href="/home">HOME</a>
             </li>
             <li>
-              <a href="/recipes">All Recipes</a>
+              <a href="/recipes">ALL RECIPES</a>
             </li>
             <li>
-              <a href="/meal">Meal</a>
+              <a href="/meal">MEAL</a>
             </li>
             <li>
-              <a href="/ingredient">Ingredients</a>
+              <a href="/ingredient">INGREDIENTS</a>
             </li>
             <li>
-              <a href="/about">About</a>
+              <a href="/about">ABOUT</a>
             </li>
             <li>
-              <a href="/contactus">About</a>
+              <a href="/contactus">CONTACT US</a>
             </li>
           </ul>
         </div>

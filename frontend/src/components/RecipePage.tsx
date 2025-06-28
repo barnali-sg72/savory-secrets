@@ -364,7 +364,7 @@ export default function RecipePage(props: Props) {
               )}
             </div>
           </div>
-          <div className="row mt-0 mx-1">
+          <div className="row mt-0 mx-1 px-0">
             <div className="col-md-12 recipe-details">
               <Outlet context={outletData} />
               <DeleteConfirmation

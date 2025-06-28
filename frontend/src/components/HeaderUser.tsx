@@ -34,11 +34,11 @@ export default function HeaderUser(props: Props) {
   };
 
   return (
-    <>
+    <div className="header-user d-flex align-items-center gap-2">
       {localStorage.getItem("user") === undefined ||
       localStorage.getItem("user") === null ? (
         <button
-          className="signin btn btn-secondary align-self-center"
+          className="signin btn btn-primary align-self-center"
           onClick={(e) => navigate("/login")}
         >
           Sign In
@@ -55,7 +55,7 @@ export default function HeaderUser(props: Props) {
             aria-expanded="false"
           >
             <p className="mb-0">Hi {getName()}!</p>
-            <PersonFill size="2rem" color="white" />
+            <PersonFill size="2rem" color="#78350f" />
           </a>
           <div
             className="dropdown-menu dropdown-menu-end"
@@ -101,6 +101,6 @@ export default function HeaderUser(props: Props) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

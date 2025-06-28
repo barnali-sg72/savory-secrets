@@ -4,9 +4,9 @@ import image3 from "../assets/images/group.jpg";
 
 export default function About() {
   return (
-    <section className="about d-flex flex-column gap-5 pt-3">
+    <section className="about d-flex flex-column  gap-5 pt-3">
       <h2 className="mt-4">About Us</h2>
-      <article className=" p-1">
+      <article className="grey-bg p-5">
         <div className="blog">
           <h3 className="mb-5">Purpose</h3>
           <p>
@@ -22,7 +22,7 @@ export default function About() {
           <img src={image1} alt="About 1"></img>
         </div>
       </article>
-      <article className=" p-1">
+      <article className=" p-5">
         <div>
           <img src={image2} alt="About 2"></img>
         </div>
@@ -41,7 +41,7 @@ export default function About() {
           </p>
         </div>
       </article>
-      <article className=" p-1">
+      <article className=" p-5 grey-bg">
         <div className="blog">
           <h3 className="mb-5">Our Community</h3>
           <p>

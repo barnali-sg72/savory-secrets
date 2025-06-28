@@ -48,16 +48,16 @@ export default function DinnerSection(props: Props) {
 
   return (
     <div className="dinner-section p-3">
-      <div className="d-flex mt-3 mb-4 flex-wrap">
+      <div className="head d-flex mt-5 mb-3 ">
         <h2 className="text-start align-self-center ms-3 flex-grow-1">
           Explore Dinner Recipes
         </h2>
         <a
           href="#"
-          className="justify-self-end align-self-center"
+          className="view justify-self-end align-self-center"
           onClick={(e) => props.handleViewAll(e, "dinner", "")}
         >
-          View All
+          View All &gt;&gt;
         </a>
       </div>
       <HorizontalScroll

@@ -141,7 +141,7 @@ export default function ContactUs() {
               <p>twitter.com/savorysecrets</p>
             </div>
           </div>
-          <div className="contact-form d-flex gap-5 border border-secondary rounded-5 overflow-hidden align-items-center ">
+          <div className="contact-form d-flex gap-5 rounded-5 overflow-hidden align-items-center ">
             <form
               className="w-100 d-flex gap-5 flex-column"
               onSubmit={handleSubmitForm}

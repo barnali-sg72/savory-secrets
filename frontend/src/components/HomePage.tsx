@@ -36,11 +36,11 @@ export default function HomePage(props: Props) {
         {/*<img className="images-anime"/> */}
         <HeroSection />
         <FavoriteSection />
-        <p className="separator"></p>
+        {/*<p className="separator"></p>*/}
         <DinnerSection handleViewAll={handleViewAll} />
-        <p className="separator"></p>
+        {/*<p className="separator"></p>*/}
         <EasySection handleViewAll={handleViewAll} />
-        <p className="separator"></p>
+        {/*<p className="separator"></p>*/}
         <h2 className="mt-5 text-start ps-5">Our Mission</h2>
         <div className="mission">
           <p className="message1">

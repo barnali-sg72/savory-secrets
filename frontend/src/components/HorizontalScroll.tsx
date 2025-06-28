@@ -126,7 +126,7 @@ export default function HorizontalScroll(props: Props) {
       className="section-scroll d-flex gap-2 pb-4 pt-2"
     >
       <ArrowLeftCircleFill
-        color="#1b5196"
+        color="#b45309"
         size={50}
         className="btn-left align-self-center arrow-button"
         onClick={() => handleButtonClick("prev")}
@@ -161,7 +161,7 @@ export default function HorizontalScroll(props: Props) {
                   <b>Author:</b>{" "}
                   {val.author.firstname + " " + val.author.lastname}
                 </h6>
-                <h5 className="card-title text-wrap truncate-1">{val.title}</h5>
+                <h5 className="card-title text-wrap truncate-2">{val.title}</h5>
               </div>
             </article>
           </li>
@@ -169,7 +169,7 @@ export default function HorizontalScroll(props: Props) {
       </ul>
       {/*</section>*/}
       <ArrowRightCircleFill
-        color="#1b5196"
+        color="#b45309"
         size={50}
         className=" btn-right align-self-center arrow-button"
         onClick={() => handleButtonClick("next")}

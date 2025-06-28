@@ -15,7 +15,7 @@ export default function HeaderSearch(props: Props) {
   };
   return (
     <div
-      className={`border border-white  rounded-4 overflow-hidden d-flex flex-nowrap align-self-center ${props.width}`}
+      className={`header-search rounded-4 overflow-hidden d-flex flex-nowrap align-self-center `}
     >
       <input
         name="header-search"
