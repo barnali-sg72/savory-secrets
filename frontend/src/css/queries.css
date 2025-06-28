@@ -56,6 +56,9 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      h2 {
+        text-align: start;
+      }
     }
   }
 
@@ -284,9 +287,12 @@
     padding: 5rem 12rem;
   }
 
-  body .mission {
+  h2.mission-header {
+    text-align: start;
+  }
+  .mission {
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 10rem;
 
     .img2,
     .message2 {
@@ -296,12 +302,10 @@
     p {
       justify-self: start;
       text-align: start;
-      width: 80%;
     }
 
     img {
       justify-self: start;
-      width: 80%;
     }
   }
 

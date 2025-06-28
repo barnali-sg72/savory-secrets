@@ -41,7 +41,7 @@ export default function HomePage(props: Props) {
         {/*<p className="separator"></p>*/}
         <EasySection handleViewAll={handleViewAll} />
         {/*<p className="separator"></p>*/}
-        <h2 className="mt-5 text-start ps-5">Our Mission</h2>
+        <h2 className="mission-header mt-5 ">Our Mission</h2>
         <div className="mission">
           <p className="message1">
             At Savory Secrets, we believe that food brings people together, and

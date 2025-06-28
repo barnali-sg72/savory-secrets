@@ -47,9 +47,9 @@ export default function DinnerSection(props: Props) {
   };
 
   return (
-    <div className="dinner-section p-3">
+    <div className="dinner-section py-3">
       <div className="head d-flex mt-5 mb-3 ">
-        <h2 className="text-start align-self-center ms-3 flex-grow-1">
+        <h2 className="align-self-center ms-3 flex-grow-1">
           Explore Dinner Recipes
         </h2>
         <a

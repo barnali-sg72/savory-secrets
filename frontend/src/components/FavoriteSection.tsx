@@ -35,8 +35,8 @@ export default function FavoriteSection() {
   };
 
   return (
-    <div className="favorite px-3 py-5">
-      <h2 className="text-start mt-5 ms-3">Most Popular Recipes</h2>
+    <div className="favorite py-5">
+      <h2 className=" mt-5 ms-3">Most Popular Recipes</h2>
       <div className="fav-scroll">
         <div className="d-flex fav-list justify-content-evenly ">
           {favorites.map((rec) => (

@@ -45,7 +45,7 @@
 }
 
 .App {
-  text-align: center;
+  /*text-align: center;*/
   font-family: "Open Sans", sans-serif;
   font-weight: 400 !important;
   font-style: normal;
@@ -675,8 +675,19 @@ p.separator {
   font-size: 3.6rem !important;
 }
 
+h2.mission-header,
 .mission {
-  padding: 30px;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+h2.mission-header {
+  text-align: center;
+}
+
+.mission {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   font-size: 20px;
   display: grid;
   grid-template-columns: 1fr;
@@ -689,6 +700,7 @@ p.separator {
   }
   p {
     font-size: 1.6rem !important;
+    line-height: 2.5rem !important;
   }
 }
 
@@ -741,7 +753,7 @@ p.separator {
 }
 
 .hero {
-  padding: 2rem;
+  padding: 2rem 4rem;
   min-height: 70rem;
   color: white;
   text-align: center;
@@ -781,6 +793,12 @@ p.separator {
 .favorite {
   background-color: var(--bg-light);
   border-bottom: var(--border-light);
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.favorite h2 {
+  text-align: center;
 }
 
 .favorite .fav-list {
@@ -844,12 +862,17 @@ p.separator {
 
 .easy-section,
 .dinner-section {
+  padding-left: 4rem;
+  padding-right: 4rem;
   .head {
     flex-direction: column;
     align-items: center;
 
     width: 100%;
     margin-bottom: 2rem;
+    h2 {
+      text-align: center;
+    }
   }
 }
 
