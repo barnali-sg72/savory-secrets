@@ -19,12 +19,12 @@ export default function About() {
           </p>
         </div>
         <div>
-          <img src={image1} alt="About 1"></img>
+          <img src={image1} alt="About 1" loading="lazy"></img>
         </div>
       </article>
       <article className=" p-5">
         <div>
-          <img src={image2} alt="About 2"></img>
+          <img src={image2} alt="About 2" loading="lazy"></img>
         </div>
 
         <div className="blog">
@@ -57,7 +57,7 @@ export default function About() {
           </p>
         </div>
         <div>
-          <img src={image3} alt="About 3"></img>
+          <img src={image3} alt="About 3" loading="lazy"></img>
         </div>
       </article>
     </section>

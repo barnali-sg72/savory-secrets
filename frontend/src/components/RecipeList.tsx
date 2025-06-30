@@ -75,6 +75,7 @@ export default function RecipeList() {
                   className="card-img-top"
                   src={rec.image}
                   alt={rec.title}
+                  loading="lazy"
                 ></img>
                 {/*{ rec.author.username === getLoggedUser()?.username ?
                                 <div className="image-buttons">

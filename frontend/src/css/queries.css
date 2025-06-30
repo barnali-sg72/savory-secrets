@@ -22,8 +22,8 @@
 
     background-image: linear-gradient(
         to right,
-        white,
-        rgba(255, 255, 255, 0.8) 40%,
+        #faf0e3,
+        #faf0e3eb 40%,
         transparent 60%
       ),
       url("../assets/images/hero6.jpg");

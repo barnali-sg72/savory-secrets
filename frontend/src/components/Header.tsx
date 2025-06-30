@@ -104,6 +104,8 @@ export default function Header(props: Props) {
       <div className="logo d-flex">
         <img
           src={logo}
+          alt="Savory Secrets Logo"
+          loading="lazy"
           width="200"
           height="100"
           className="align-self-center"

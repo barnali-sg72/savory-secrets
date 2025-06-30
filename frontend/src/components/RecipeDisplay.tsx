@@ -270,6 +270,8 @@ export default function RecipeDisplay() {
                   <img
                     className="recipe-image"
                     src={recipeDetails?.image}
+                    alt={recipeDetails?.title}
+                    loading="lazy"
                   ></img>
                 </div>
               </div>

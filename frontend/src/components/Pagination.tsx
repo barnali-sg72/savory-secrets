@@ -113,7 +113,12 @@ export default function Pagination(props: Props) {
             className="card position-relative"
             onClick={() => navigate("/recipes/display/" + rec.id)}
           >
-            <img className="card-img-top" src={rec.image} alt={rec.title}></img>
+            <img
+              className="card-img-top"
+              src={rec.image}
+              alt={rec.title}
+              loading="lazy"
+            ></img>
             <div className="card-body">
               {rec.rating && rec.rating > 0 ? (
                 <Rating num={rec?.rating} />

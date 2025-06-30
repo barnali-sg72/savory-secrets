@@ -761,8 +761,8 @@ h2.mission-header {
 
   background-image: linear-gradient(
       to bottom,
-      white,
-      rgba(255, 255, 255, 0.8) 30%,
+      #faf0e3,
+      #faf0e3eb 30%,
       transparent
     ),
     url("./assets/images/hero9.jpg");

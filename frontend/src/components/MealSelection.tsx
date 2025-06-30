@@ -90,7 +90,12 @@ export default function MealSelection(props: Props) {
               className="d-flex flex-column search-card rounded-4  mx-1 gap-5"
               onClick={() => onSearchSelect(val.meal)}
             >
-              <img className="w-100 rounded" src={val.img}></img>
+              <img
+                alt={val.meal}
+                className="w-100 rounded"
+                src={val.img}
+                loading="lazy"
+              ></img>
               <h4 className="text-start align-self-center justify-self-center">
                 {val.meal}
               </h4>

@@ -53,8 +53,18 @@ export default function HomePage(props: Props) {
             here.
           </p>
 
-          <img className="img1" src="images/lobster.jpg" />
-          <img className="img2" src="images/dish1.jpg" />
+          <img
+            className="img1"
+            alt="Lobster Dish"
+            loading="lazy"
+            src="images/lobster.jpg"
+          />
+          <img
+            className="img2"
+            alt="Our Goal"
+            loading="lazy"
+            src="images/dish1.jpg"
+          />
           <p className="message2">
             Our goal is to provide you with reliable, easy-to-follow recipes
             that you can trust. Whether you’re looking for quick weeknight

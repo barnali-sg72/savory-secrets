@@ -90,7 +90,12 @@ export default function IngredientSelection(props: Props) {
               className="d-flex flex-column gap-4 search-card rounded-4  mx-1 "
               onClick={() => onSearchSelect(val.ingredient)}
             >
-              <img className="w-100 rounded" src={val.img}></img>
+              <img
+                alt={val.ingredient}
+                loading="lazy"
+                className="w-100 rounded"
+                src={val.img}
+              ></img>
               <h4 className="text-start align-self-center justify-self-center">
                 {val.ingredient}
               </h4>

@@ -48,6 +48,7 @@ export default function FavoriteSection() {
                 className="card-img-top mb-2"
                 src={rec.image}
                 alt={rec.title}
+                loading="lazy"
               ></img>
               <div className="card-body">
                 {rec.rating && rec.rating > 0 ? (

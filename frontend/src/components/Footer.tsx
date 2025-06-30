@@ -4,7 +4,12 @@ export default function Footer() {
   return (
     <footer className="d-flex flex-column justify-content-between">
       <div className="first-row d-flex  justify-content-evenly">
-        <img src={logo} className="align-self-start border rounded-4"></img>
+        <img
+          src={logo}
+          alt="Savory Secrets Logo"
+          loading="lazy"
+          className="align-self-start border rounded-4"
+        ></img>
         <div className="footer-item menu-links">
           <h5 className="fw-bold">MENU LINKS</h5>
           <ul>
